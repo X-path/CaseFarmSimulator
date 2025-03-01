@@ -73,14 +73,12 @@ public class CropController : MonoBehaviour
             cropChilds[^1].SetActive(false);
             checkIcon.SetActive(false);
             StartCoroutine(GrowCrops());
+
+            FirebaseManager.Instance.ScoreIncrease(+1);
         }
     }
 
-  /*  private void OnDestroy()
-    {
-        StopCoroutine(GrowCrops());
-
-    }*/
+ 
 
 
 }

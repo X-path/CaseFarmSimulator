@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "841402937473",
+    "firebase_url": "https://farmsimulatorcase-default-rtdb.firebaseio.com",
+    "project_id": "farmsimulatorcase",
+    "storage_bucket": "farmsimulatorcase.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:841402937473:android:b6bf28e6a987f27883dd80",
+        "android_client_info": {
+          "package_name": "com.HuseyinIsik.FarmSimulator"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGNTmokmAKS7YeS3ztMJxGA3MAnAh5a30"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
