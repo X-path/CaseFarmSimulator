@@ -93,7 +93,7 @@ public class PlacementSystem : MonoBehaviour
     //    return selectedData.CanPlaceObejctAt(gridPosition, database.objectsData[selectedObjectIndex].Size);
     //}
 
-    private void StopPlacement()
+    public void StopPlacement()
     {
        // soundFeedback.PlaySound(SoundType.Click);
         if (buildingState == null)

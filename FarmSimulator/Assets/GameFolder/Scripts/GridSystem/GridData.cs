@@ -61,6 +61,20 @@ public class GridData
             placedObjects.Remove(pos);
         }
     }
+
+    public Vector3Int GetObjectPosition(int gameObjectIndex)
+    {
+        foreach (var entry in placedObjects)
+        {
+            if (entry.Value.PlacedObjectIndex == gameObjectIndex)
+            {
+                return entry.Key; // Objeyi yerleþtirdiðimiz pozisyonu döndür
+            }
+        }
+        Debug.LogError($"GetObjectPosition: Index {gameObjectIndex} bulunamadý!");
+        return Vector3Int.zero; // Eðer obje bulunamazsa (hata kontrolü için)
+    }
+
 }
 
 public class PlacementData

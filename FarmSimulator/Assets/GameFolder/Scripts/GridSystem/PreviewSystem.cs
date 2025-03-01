@@ -38,7 +38,7 @@ public class PreviewSystem : MonoBehaviour
             Destroy(previewObject);
         }
 
-        previewObject = Instantiate(existingObject);
+       previewObject = Instantiate(existingObject);
         PreparePreview(previewObject);
         cellIndicator.SetActive(true);
     }
@@ -88,7 +88,7 @@ public class PreviewSystem : MonoBehaviour
 
     private void ApplyFeedbackToPreview(bool validity)
     {
-        Color c = validity ? Color.white : Color.red;
+        Color c = validity ? Color.yellow : Color.red;
         
         c.a = 0.5f;
         previewMaterialInstance.color = c;
@@ -96,7 +96,7 @@ public class PreviewSystem : MonoBehaviour
 
     private void ApplyFeedbackToCursor(bool validity)
     {
-        Color c = validity ? Color.white : Color.red;
+        Color c = validity ? Color.yellow : Color.red;
 
         c.a = 0.5f;
         cellIndicatorRenderer.material.color = c;

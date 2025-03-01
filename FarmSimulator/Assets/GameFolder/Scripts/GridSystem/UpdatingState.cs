@@ -35,6 +35,7 @@ public class UpdatingState : IBuildingState
 
     public void OnAction(Vector3Int gridPosition)
     {
+       
         // Nesnenin hangi grupta olduðunu bul (zemin mi, mobilya mý?)
         GridData selectedData = null;
         if (!furnitureData.CanPlaceObejctAt(gridPosition, Vector2Int.one))
@@ -49,36 +50,55 @@ public class UpdatingState : IBuildingState
         // Eðer seçili nesne yoksa hata ver
         if (selectedData == null)
         {
-            // soundFeedback.PlaySound(SoundType.wrongPlacement);
-            return;
+
+           
         }
+        else
+        {
+            // Seçili nesnenin indeksini al
+            gameObjectIndex = selectedData.GetRepresentationIndex(gridPosition);
+            if (gameObjectIndex == -1)
+                return;
 
-        // Seçili nesnenin indeksini al
-        gameObjectIndex = selectedData.GetRepresentationIndex(gridPosition);
-        if (gameObjectIndex == -1)
-            return;
+            // **Mevcut nesneyi bul**
+            GameObject selectedObject = objectPlacer.GetPlacedObject(gameObjectIndex);
+            if (selectedObject == null)
+                return;
 
-        // **Mevcut nesneyi bul**
-        GameObject selectedObject =objectPlacer.GetPlacedObject(gameObjectIndex);
-        if (selectedObject == null)
-            return;
+            Debug.Log("XXXXXXXXXXXXXXXXXXXX:" + selectedObject);
+            previewSystem.StartShowingMovePreview(selectedObject);
 
-        previewSystem.StartShowingMovePreview(selectedObject);
+        
 
-        // Nesnenin eski yerini boþalt
-        selectedData.RemoveObjectAt(gridPosition);
+            // Nesnenin eski yerini boþalt
+            selectedData.RemoveObjectAt(gridPosition);
+
+           // objectPlacer.RemoveObjectAt(gameObjectIndex);
+
+
+        }
 
         // Yeni konuma yerleþtir
         objectPlacer.MoveObject(gameObjectIndex, grid.CellToWorld(gridPosition));
         selectedData.AddObjectAt(gridPosition, Vector2Int.one, selectedObjectIndex, gameObjectIndex);
+
+
+
 
         // soundFeedback.PlaySound(SoundType.Move);
     }
 
     public void UpdateState(Vector3Int gridPosition)
     {
-        bool validity = !floorData.CanPlaceObejctAt(gridPosition, Vector2Int.one) ||
-                        !furnitureData.CanPlaceObejctAt(gridPosition, Vector2Int.one);
+        bool canPlaceOnFloor = floorData.CanPlaceObejctAt(gridPosition, Vector2Int.one);
+        bool canPlaceOnFurniture = furnitureData.CanPlaceObejctAt(gridPosition, Vector2Int.one);
+
+        Debug.Log($"Grid Position: {gridPosition} | Floor: {canPlaceOnFloor} | Furniture: {canPlaceOnFurniture}");
+
+        bool validity = !canPlaceOnFloor || !canPlaceOnFurniture;
         previewSystem.UpdatePosition(grid.CellToWorld(gridPosition), validity);
+       /* bool validity = !floorData.CanPlaceObejctAt(gridPosition, Vector2Int.one) ||
+                        !furnitureData.CanPlaceObejctAt(gridPosition, Vector2Int.one);
+        previewSystem.UpdatePosition(grid.CellToWorld(gridPosition), validity);*/
     }
 }
