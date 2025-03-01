@@ -20,6 +20,11 @@ public class CropController : MonoBehaviour
     {
         while (currentIndex < cropChilds.Count)
         {
+           
+            if (this == null || this.gameObject == null || !this.enabled)
+            {
+                yield break; 
+            }
             GrowNextCrop();
             yield return new WaitForSeconds(growthInterval);
         }
@@ -45,11 +50,11 @@ public class CropController : MonoBehaviour
         GameObject crop = cropChilds[currentIndex];
         crop.SetActive(true);
 
-        // Baþlangýç pozisyonunu al ve nesneyi aþaðýda baþlat
+       
         Vector3 originalPos = crop.transform.localPosition;
         crop.transform.localPosition = new Vector3(originalPos.x, originalPos.y - moveOffset, originalPos.z);
 
-        // Yukarý çýkma animasyonu
+     
         crop.transform.DOLocalMoveY(originalPos.y, moveEffectDuration)
             .SetEase(Ease.Linear);
 
@@ -71,11 +76,11 @@ public class CropController : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
+  /*  private void OnDestroy()
     {
         StopCoroutine(GrowCrops());
 
-    }
+    }*/
 
 
 }
