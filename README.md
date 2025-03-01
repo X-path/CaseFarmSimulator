@@ -10,3 +10,8 @@ State Pattern: Oyundaki durum yönetimini IBuildingState arayüzü ile sağladı
 DOTween:DOTween kullanarak küçük animasyonlar oluşturdum.<br>
 Shader Graph: Oyundaki grid sisteminin rahatlıkla görülebilmesi için kullandım.<br>
 Grid System: Oyundaki nesne yerleşimi ve düzenini yönetmek için Unity’nin Grid bileşenini kullandım.<br>
+
+Screenshots
+![](/Farm1.PNG)
+![](/Farm2.PNG)
+![](/Farm3.PNG)
