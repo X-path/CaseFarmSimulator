@@ -3,7 +3,7 @@ Ekranda bulunan butonlar ile sahneye ev(Big House,Small House) ve ekin(Flower ve
 Eklediğiniz ekinler belirli zaman periyotları ile 3 kademede büyüyecek ve hasat yapma zamanı geldiğinde üstlerinde tick sembolü çıkacaktır.<br>
 Hasat yaptığınızda o alanda bulunan ekin tekrar büyüyecektir.<br>
 Remove butonu ile hem evleri hem ekin alanlarını silebilirsiniz.Silinen bu alanları tekrar kullanabilirsiniz.<br>
-Exit butonu oyunu kapatmaya ve verilerin(score) kaydetmeyi sağlamaktadır.<br>
+Exit butonu oyunu kapatmaya ve verileri(score) kaydetmeyi sağlamaktadır.<br>
 
 Kullanılan teknolojiler ve sistem mimarisi <br>
 Observer: Oyun içi olayları yönetmek için Action yapısı kullandım.<br>
