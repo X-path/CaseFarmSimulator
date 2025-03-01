@@ -12,6 +12,8 @@ Shader Graph: Oyundaki grid sisteminin rahatlıkla görülebilmesi için kulland
 Grid System: Oyundaki nesne yerleşimi ve düzenini yönetmek için Unity’nin Grid bileşenini kullandım.<br>
 
 Screenshots
+![](/FarmLogin.PNG)
+![](/FarmRegister.PNG)
 ![](/Farm1.PNG)
 ![](/Farm2.PNG)
 ![](/Farm3.PNG)
