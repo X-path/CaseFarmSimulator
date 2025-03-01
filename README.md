@@ -16,9 +16,11 @@ Firebase:Oyuna giriş işlemi ve score tutmak için kullandım.<br>
 Not:<br>
 Proje Unity 6.000.0.25f1 versiyonu ile yapılmıştır.<br>
 Büyük dosyalar için Git lfs kullanılmıştır.<br>
+
+Sorun yaşanabilecek durumlar ve paketler<br>
 FireBaseAuthPack:https://drive.google.com/file/d/1rtZ6-eUieVAzQYedJLHEII3uirQOjIm5/view?usp=sharing  <br>
 FireDatabasePack:https://drive.google.com/file/d/18Q61O_geRKEQCCHYwbifvBQFFPRAXB9B/view?usp=sharing  <br>
-Github ile sorun yaşanırsa oyun paketi:https://drive.google.com/file/d/1t00dOl5Sl4i0N13Vc7vUadaJSj7iS95d/view?usp=sharing  <br>
+Oyun paketi:https://drive.google.com/file/d/1t00dOl5Sl4i0N13Vc7vUadaJSj7iS95d/view?usp=sharing  <br>
 
 Screenshots
 ![](/FarmLogin.PNG)
